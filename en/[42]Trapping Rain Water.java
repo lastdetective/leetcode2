@@ -109,4 +109,14 @@ class Solution42 {
         return ans;
 
     }
+
+
+    public int trap3ofMine(int[] height) {
+        /*int ans = 0, current = 0;
+        Stack<Integer> stack = new Stack<>();
+        while (current < height.length) {
+            
+        }*/
+        return 0;
+    }
 }
