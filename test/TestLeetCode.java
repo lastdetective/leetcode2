@@ -14,6 +14,15 @@ import java.util.List;
 public class TestLeetCode {
     @Test
     public void test1() {
+        Solution1 solution1 = new Solution1();
+        int[] nums = {0, 3, 9, 3};
+        int target = 6;
+        int[] result = solution1.twoSum(nums, target);
+        Assert.assertArrayEquals(new int[]{1, 3}, result);
+    }
+
+    @Test
+    public void test15() {
         Solution15 solution15 = new Solution15();
         solution15.threeSum(null);
     }
@@ -178,13 +187,7 @@ public class TestLeetCode {
     @Test
     public void testSql() {
         int x = 10;
-        int y = 5;
-        System.out.println("x = "+x);
-        System.out.println("y = "+y);
-        int temp = x;
-        x = y;
-        y = temp;
-        System.out.println("x = "+x);
-        System.out.println("y = "+y);
+        int y = 10;
+        System.out.println(x == y);
     }
 }
