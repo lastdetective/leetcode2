@@ -177,7 +177,7 @@ public class TestLeetCode {
 
     @Test
     public void test118() {
-        int nums = 5;
+        int nums = 8;
         Solution118 solution118 = new Solution118();
         List<List<Integer>> result = solution118.generate2(nums);
         System.out.println(result);
@@ -189,5 +189,20 @@ public class TestLeetCode {
         int x = 10;
         int y = 10;
         System.out.println(x == y);
+    }
+
+    @Test
+    public void test24() {
+        //Given 1->2->3->4, you should return the list as 2->1->4->3.
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = node4;
+        Solution24 solution24 = new Solution24();
+        ListNode result = solution24.swapPairs(node1);
+        System.out.println(result);
     }
 }

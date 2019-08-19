@@ -78,4 +78,37 @@ class Solution118 {
             list.add(currentList);
         }
     }
+
+
+
+    /**
+     * Runtime: 0 ms, faster than 100.00% of Java online submissions for Pascal's Triangle.
+     * Memory Usage: 33.9 MB, less than 7.23% of Java online submissions for Pascal's Triangle.
+     * Next challenges:
+     *
+     * @param numbers
+     * @return
+     */
+    public List<List<Integer>> generate4(int numbers) {
+        return helper(numbers);
+    }
+
+    List<List<Integer>> helper(int numbers) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (numbers < 1) {
+            return result;
+        }
+        for (int i = 0; i < numbers; i++) {
+            List<Integer> row = new ArrayList<>();
+            for (int j = 0; j <= i; j++) {
+                if (j == 0 || j == i) {
+                    row.add(1);
+                } else {
+                    row.add(result.get(i - 1).get(j - 1) + result.get(i - 1).get(j));
+                }
+            }
+            result.add(row);
+        }
+        return result;
+    }
 }

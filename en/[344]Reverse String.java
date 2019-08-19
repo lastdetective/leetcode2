@@ -31,12 +31,12 @@ class Solution344 {
     }
 
     private char[] helper(int curr, char[] chars) {
-        if (chars == null || chars.length == 0 || curr == chars.length / 2) {
+        if (chars == null || chars.length == 0 || curr >= chars.length / 2) {
             return chars;
         }
-        char temp = chars[chars.length - 1 - curr];
-        chars[chars.length - 1 - curr] = chars[curr];
-        chars[curr] = temp;
+        char temp = chars[curr];
+        chars[curr] = chars[chars.length - 1 - curr];
+        chars[chars.length - 1 - curr] = temp;
         return helper(curr + 1, chars);
     }
 }
