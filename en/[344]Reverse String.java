@@ -27,14 +27,16 @@
 
 class Solution344 {
     public void reverseString(char[] s) {
-        int i = 0;
-        int j = s.length - 1;
-        while (i < j) {
-            char temp = s[i];
-            s[i] = s[j];
-            s[j] = temp;
-            i++;
-            j--;
+        helper(0, s);
+    }
+
+    private char[] helper(int curr, char[] chars) {
+        if (chars == null || chars.length == 0 || curr == chars.length / 2) {
+            return chars;
         }
+        char temp = chars[chars.length - 1 - curr];
+        chars[chars.length - 1 - curr] = chars[curr];
+        chars[curr] = temp;
+        return helper(curr + 1, chars);
     }
 }

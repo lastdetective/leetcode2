@@ -12,8 +12,41 @@
 // 
 //
 
-class Solution {
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution1 {
     public int[] twoSum(int[] nums, int target) {
-        return null;
+        /*
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = 0; j < nums.length && j != i; j++) {
+                if (nums[i] + nums[j] == target) {
+                    return new int[]{i, j};
+                }
+            }
+        }
+        throw new RuntimeException("no element");
+         */
+        /*Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            map.put(nums[i], i);
+        }
+        for (int i = 0; i < nums.length; i++) {
+            int difference = target - nums[i];
+            if (map.containsKey(difference) && map.get(difference) != i) {
+                return new int[]{i, map.get(difference)};
+            }
+        }
+        throw new IllegalArgumentException("No two sum solution");*/
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+            if (map.containsKey(complement)) {
+                return new int[]{map.get(complement), i};
+            }
+            map.put(nums[i],i);
+        }
+        throw new IllegalArgumentException("No two Sum solution");
     }
 }
